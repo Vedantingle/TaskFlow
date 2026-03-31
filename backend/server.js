@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "*"
+  origin: "https://expensetaskflow.netlify.app/login"
 }));
 app.use(express.json());
 
