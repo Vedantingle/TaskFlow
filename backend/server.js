@@ -1,7 +1,6 @@
-require("dotenv").config();
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require("cors");
+const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 
@@ -11,7 +10,8 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://expensetaskflow.netlify.app/login"
+  origin: process.env.NODE_ENV === 'production' ? '*' : 'http://localhost:3000',
+  credentials: true
 }));
 app.use(express.json());
 
