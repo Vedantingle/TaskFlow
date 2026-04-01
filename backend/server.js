@@ -17,10 +17,11 @@ app.use(express.json());
 // Routes
 const authRoutes = require('./routes/auth');
 const taskRoutes = require('./routes/tasks');
+const expenseRoutes = require("./routes/expenseRoutes");
 
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
-app.use("/api/expenses", ...)
+app.use("/api/expenses", expenseRoutes);
 
 // Serve frontend in production
 
