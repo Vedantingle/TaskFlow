@@ -17,7 +17,7 @@ app.use(express.json());
 // Routes
 const authRoutes = require('./routes/auth');
 const taskRoutes = require('./routes/tasks');
-const expenseRoutes = require("./routes/expenseRoutes");
+const expenseRoutes = require("./routes/expense");
 
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
