@@ -10,8 +10,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? '*' : 'http://localhost:3000',
-  credentials: true
+  origin: "https://expensetaskflow.netlify.app/login"
 }));
 app.use(express.json());
 
@@ -21,14 +20,9 @@ const taskRoutes = require('./routes/tasks');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use("/api/expenses", ...)
 
 // Serve frontend in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-  });
-}
 
 // Connect MongoDB and start server
 const PORT = process.env.PORT || 5000;
