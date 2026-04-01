@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "https://expense-backend-yejt.onrender.com"
+  baseURL: "https://expense-backend-yejt.onrender.com/api"
 });
 
 // Add token to every request if present
